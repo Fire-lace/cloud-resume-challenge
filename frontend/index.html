@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud & DevOps Engineer | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="page-gradient"></div>
+
+  <header class="navbar">
+    <div class="logo">
+      <span class="logo-mark">GE</span>
+      <span class="logo-text">GREAT Engineer</span>
+    </div>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="btn-outline" id="themeToggle">Dark / Light</button>
+  </header>
+
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <p class="hero-tag">Cloud & DevOps Engineer</p>
+      <h1>Designing resilient, scalable infrastructure for modern products.</h1>
+      <p class="hero-sub">
+        I help teams ship faster and safer by building cloud-native platforms, automating delivery pipelines,
+        and hardening reliability from day zero.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Featured Work</a>
+        <a href="#contact" class="btn-ghost">Schedule a Call</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Cloud Platforms</span>
+          <span class="meta-value">AWS · Azure · GCP</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Core Focus</span>
+          <span class="meta-value">Kubernetes · CI/CD · Observability</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Availability</span>
+          <span class="meta-value">Open for remote contracts</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="glass-card metrics-card">
+        <h3>Platform Reliability Snapshot</h3>
+        <div class="metrics-grid">
+          <div class="metric">
+            <span class="metric-label">99.98%</span>
+            <span class="metric-desc">Avg. uptime across managed workloads</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">-63%</span>
+            <span class="metric-desc">Deployment time reduction</span>
+          </div>
+          <div class="metric">
+            <span class="metric-label">+47%</span>
+            <span class="metric-desc">Incident resolution speed</span>
+          </div>
+        </div>
+      </div>
+      <div class="glass-card stack-card">
+        <h3>Core Tooling</h3>
+        <ul class="stack-list">
+          <li>Terraform · Pulumi · CloudFormation</li>
+          <li>GitHub Actions · GitLab CI · Azure DevOps</li>
+          <li>Docker · Kubernetes · Helm · ArgoCD</li>
+          <li>Prometheus · Grafana · Loki · ELK</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="section-header">
+      <h2>Featured Projects</h2>
+      <p>Two advanced platform builds and three intermediate implementations that showcase real-world impact.</p>
+    </div>
+
+    <h3 class="section-subtitle">Advanced Projects</h3>
+    <div class="projects-grid">
+      <!-- Advanced Project 1 -->
+      <article class="project-card project-advanced">
+        <div class="project-header">
+          <span class="project-pill">Advanced</span>
+          <h3>Multi-Cloud Kubernetes Platform for FinTech</h3>
+        </div>
+        <p class="project-summary">
+          Designed and implemented a multi-region, multi-cloud Kubernetes platform for a FinTech company
+          handling sensitive payment data and real-time risk scoring.
+        </p>
+        <div class="project-meta">
+          <div>
+            <span class="meta-label">Cloud</span>
+            <span class="meta-value">AWS · GCP</span>
+          </div>
+          <div>
+            <span class="meta-label">Scale</span>
+            <span class="meta-value">120+ microservices</span>
+          </div>
+          <div>
+            <span class="meta-label">Outcome</span>
+            <span class="meta-value">Zero-downtime deployments</span>
+          </div>
+        </div>
+        <ul class="project-highlights">
+          <li><strong>Architecture:</strong> Multi-cluster Kubernetes with service mesh (Istio) and centralized ingress.</li>
+          <li><strong>Security:</strong> Policy-as-code with OPA, secrets management via HashiCorp Vault, fine-grained RBAC.</li>
+          <li><strong>Delivery:</strong> GitOps pipelines with ArgoCD and GitHub Actions, progressive rollouts and canary releases.</li>
+          <li><strong>Observability:</strong> Full-stack monitoring with Prometheus, Grafana, Loki, and custom SLO dashboards.</li>
+        </ul>
+        <button class="btn-link" data-project="advanced1">View technical breakdown</button>
+      </article>
+
+      <!-- Advanced Project 2 -->
+      <article class="project-card project-advanced">
+        <div class="project-header">
+          <span class="project-pill">Advanced</span>
+          <h3>Enterprise CI/CD Platform for Global Retail</h3>
+        </div>
+        <p class="project-summary">
+          Built a centralized CI/CD platform powering hundreds of applications, enabling teams to ship
+          multiple times per day with strong governance and compliance.
+        </p>
+        <div class="project-meta">
+          <div>
+            <span class="meta-label">Cloud</span>
+            <span class="meta-value">Azure</span>
+          </div>
+          <div>
+            <span class="meta-label">Teams</span>
+            <span class="meta-value">35+ product squads</span>
+          </div>
+          <div>
+            <span class="meta-label">Outcome</span>
+            <span class="meta-value">3x faster release cycles</span>
+          </div>
+        </div>
+        <ul class="project-highlights">
+          <li><strong>Pipeline:</strong> Reusable pipeline templates with Azure DevOps and YAML-based workflows.</li>
+          <li><strong>Compliance:</strong> Integrated security scanning (SAST/DAST), artifact signing, and audit trails.</li>
+          <li><strong>Governance:</strong> Environment promotion rules, approvals, and automated change logs.</li>
+          <li><strong>Developer UX:</strong> Self-service onboarding, documentation portal, and golden paths.</li>
+        </ul>
+        <button class="btn-link" data-project="advanced2">View technical breakdown</button>
+      </article>
+    </div>
+
+    <h3 class="section-subtitle">Intermediate Projects</h3>
+    <div class="projects-grid">
+      <!-- Intermediate Project 1 -->
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-pill project-pill-intermediate">Intermediate</span>
+          <h3>Infrastructure-as-Code for SaaS Analytics Platform</h3>
+        </div>
+        <p class="project-summary">
+          Migrated manual cloud resources to fully declarative infrastructure using Terraform modules and remote state.
+        </p>
+        <ul class="project-highlights">
+          <li><strong>Stack:</strong> AWS, Terraform, GitHub Actions.</li>
+          <li><strong>Impact:</strong> Repeatable environments, reduced drift, faster onboarding.</li>
+        </ul>
+      </article>
+
+      <!-- Intermediate Project 2 -->
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-pill project-pill-intermediate">Intermediate</span>
+          <h3>Containerization & Deployment for Legacy APIs</h3>
+        </div>
+        <p class="project-summary">
+          Containerized legacy .NET and Node.js APIs, introducing Docker-based workflows and basic orchestration.
+        </p>
+        <ul class="project-highlights">
+          <li><strong>Stack:</strong> Docker, Azure Web Apps, GitLab CI.</li>
+          <li><strong>Impact:</strong> Consistent deployments, simplified scaling.</li>
+        </ul>
+      </article>
+
+      <!-- Intermediate Project 3 -->
+      <article class="project-card">
+        <div class="project-header">
+          <span class="project-pill project-pill-intermediate">Intermediate</span>
+          <h3>Monitoring & Alerting for E-commerce Platform</h3>
+        </div>
+        <p class="project-summary">
+          Implemented application and infrastructure monitoring with actionable alerts and dashboards.
+        </p>
+        <ul class="project-highlights">
+          <li><strong>Stack:</strong> Prometheus, Grafana, Alertmanager.</li>
+          <li><strong>Impact:</strong> Reduced mean time to detect and resolve incidents.</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="section">
+    <div class="section-header">
+      <h2>Skills & Capabilities</h2>
+      <p>From greenfield builds to stabilizing existing platforms, I focus on reliability, automation, and clarity.</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skills-column">
+        <h3>Cloud & Infrastructure</h3>
+        <ul>
+          <li>AWS, Azure, GCP</li>
+          <li>VPC design, networking, security groups</li>
+          <li>Infrastructure-as-Code (Terraform, Pulumi)</li>
+          <li>Serverless & container-based workloads</li>
+        </ul>
+      </div>
+      <div class="skills-column">
+        <h3>DevOps & Delivery</h3>
+        <ul>
+          <li>CI/CD pipelines and release strategies</li>
+          <li>GitOps workflows and environment promotion</li>
+          <li>Automated testing and quality gates</li>
+          <li>Secrets and configuration management</li>
+        </ul>
+      </div>
+      <div class="skills-column">
+        <h3>Reliability & Observability</h3>
+        <ul>
+          <li>Monitoring, logging, and tracing</li>
+          <li>SLOs, error budgets, and incident response</li>
+          <li>Capacity planning and performance tuning</li>
+          <li>Chaos engineering and resilience testing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section">
+    <div class="section-header">
+      <h2>Experience</h2>
+      <p>Hands-on engineering across startups and enterprises, always with a platform mindset.</p>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Senior Cloud & DevOps Engineer</h3>
+          <p class="timeline-meta">Global Retail · 2022 – Present</p>
+          <p>
+            Leading platform initiatives, defining cloud standards, and mentoring teams on DevOps practices
+            while owning reliability for critical customer-facing systems.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>Cloud Engineer</h3>
+          <p class="timeline-meta">FinTech Startup · 2019 – 2022</p>
+          <p>
+            Built secure, compliant cloud environments and automated delivery pipelines for high-growth payment products.
+          </p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <h3>DevOps Engineer</h3>
+          <p class="timeline-meta">SaaS Analytics · 2017 – 2019</p>
+          <p>
+            Introduced CI/CD, containerization, and monitoring, helping the team move from ad-hoc deployments to predictable releases.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-contact">
+    <div class="section-header">
+      <h2>Let’s build something resilient.</h2>
+      <p>
+        Whether you need a new platform, a migration, or to stabilize what you already have,
+        I’d love to talk about your roadmap.
+      </p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" required />
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@company.com" required />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="company">Company / Project</label>
+          <input id="company" type="text" placeholder="Company or project name" />
+        </div>
+        <div class="form-field">
+          <label for="message">What do you want to build?</label>
+          <textarea id="message" rows="4" placeholder="Share a bit about your platform, timelines, and goals." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+
+      <div class="contact-info">
+        <div class="glass-card contact-card">
+          <h3>Direct Contact</h3>
+          <p><strong>Email:</strong> great.cloud.devops@example.com</p>
+          <p><strong>Location:</strong> Naaldwijk, South Holland, Netherlands</p>
+          <p><strong>Time zone:</strong> West Africa Standard Time (WAT)</p>
+          <p><strong>Preferred:</strong> Remote-first, async-friendly collaboration.</p>
+        </div>
+        <div class="glass-card contact-card">
+          <h3>Engagement Models</h3>
+          <ul>
+            <li>Architecture & platform design sprints</li>
+            <li>Implementation and migration projects</li>
+            <li>Reliability and observability audits</li>
+            <li>DevOps coaching and enablement</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> GREAT · Cloud & DevOps Engineer · Crafted with care.</p>
+  </footer>
+
+  <div class="modal-backdrop" id="projectModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-content" id="modalContent">
+        <!-- Filled by JS -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
