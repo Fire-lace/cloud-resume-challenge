@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Path — Portfolio</title>
+  <meta name="description" content="A premium, single-page portfolio with smooth interactions and typewriter hero." />
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" type="text/css" href="portfolio.css">
+</head>
+<body>
+  <!-- ================= NAV ================= -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="#home" aria-label="Scroll to top">
+        <span class="dot" aria-hidden="true"></span>
+        <span>.Portfolio</span>
+      </a>
+      <div class="navlinks" id="navlinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ================= HERO ================= -->
+  <header id="home" class="section hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">Welcome</span>
+        <h1 class="h1">Hi, I'm <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2)); -webkit-background-clip:text; background-clip:text; color:transparent">Great Emmanuel Agu</span>.</h1>
+        <p class="lead">I build fast, delightful products on the web and beyond. I care about clean design, performance, and high‑impact user experiences.</p>
+        <div class="type" aria-live="polite">
+          <span id="typewriter"></span>
+          <span class="caret" aria-hidden="true"></span>
+        </div>
+        <div class="row" style="margin-top:18px">
+          <a class="btn" href="#projects">View Projects</a>
+          <a class="btn" style="background:linear-gradient(90deg, #fff, #e8efff); color:#0e152b" href="#contact">Hire Me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="avatar"><img src="1-web.jpg" alt="Hero image placeholder (1200×900)"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <span class="eyebrow">About</span>
+    <div class="about" style="margin-top:12px">
+      <div class="photo"><img src="4.jpg" alt="Profile image placeholder (800×1000)"></div>
+      <div class="card">
+        <h2 style="margin:4px 0 6px">A little about me</h2>
+        <p style="color:var(--muted); font-size: 17px;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ultricies, eros nec rhoncus fermentum, urna eros facilisis ligula, ut lacinia lorem lectus sed magna. Integer non pharetra mi. Vivamus varius, nunc id efficitur sodales, libero mi lobortis ligula, vitae dignissim felis risus sed magna. Morbi posuere, mi ac dignissim ultricies, massa nulla fringilla ipsum, et fringilla tellus quam sit amet ante. Suspendisse potenti. Mauris sollicitudin finibus lorem, nec dignissim ante porta nec. Fusce pretium lectus sit amet lacus tincidunt, sed ullamcorper lectus tristique.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section">
+    <span class="eyebrow">Skills</span>
+    <h2 class="h1" style="font-size: clamp(28px,4vw,40px); margin-top:6px">What I work with</h2>
+    <div class="skills-grid" id="skillsGrid">
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">JavaScript / TypeScript</div>
+        <div class="sub">Frameworks, tooling, and performance</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">React / Next.js</div>
+        <div class="sub">SPA, SSR, SEO, and DX</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">Python / Flask</div>
+        <div class="sub">APIs, data, and automation</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">UI / UX</div>
+        <div class="sub">Design systems, motion, accessibility</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">DevOps</div>
+        <div class="sub">CI/CD, Docker, cloud</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">Databases</div>
+        <div class="sub">SQL, schema design, ORMs</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">Testing</div>
+        <div class="sub">Unit, e2e, QA process</div>
+      </div>
+      <div class="skill" data-tilt>
+        <div class="shine"></div>
+        <div class="label">Performance</div>
+        <div class="sub">Core Web Vitals, profiling</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="section">
+    <span class="eyebrow">Projects</span>
+    <h2 class="h1" style="font-size: clamp(28px,4vw,40px); margin-top:6px">Selected work</h2>
+    <div class="projects">
+      <article class="card reveal">
+        <span class="tag">Open Source</span>
+        <h3>Cloud Resume Challenge</h3>
+        <p>A cloud-based resume that showcases my skills and experience.</p>
+        <a href="https://github.com/Fire-lace/cloud-resume-challenge.git" target="_blank" rel="noopener noreferrer" aria-label="Open Project One on GitHub"></a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Web App</span>
+        <h3>Project Two</h3>
+        <p>Data-driven app with clean UX and strong performance.</p>
+        <a href="https://github.com/username/project-two" target="_blank" rel="noopener noreferrer" aria-label="Open Project Two on GitHub"></a>
+      </article>
+      <article class="card reveal">
+        <span class="tag">Experiment</span>
+        <h3>Project Three</h3>
+        <p>Fun exploration of animations and interaction.</p>
+        <a href="https://github.com/username/project-three" target="_blank" rel="noopener noreferrer" aria-label="Open Project Three on GitHub"></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section">
+    <span class="eyebrow">Contact</span>
+    <h2 class="h1" style="font-size: clamp(28px,4vw,40px); margin-top:6px">Let's talk</h2>
+
+    <form id="contactForm" class="split" onsubmit="return false" autocomplete="on">
+      <div class="contact-grid">
+        <div>
+          <label for="first" class="eyebrow" style="letter-spacing:.08em">First Name</label>
+          <input class="input" id="first" name="first" placeholder="John" required />
+        </div>
+        <div>
+          <label for="last" class="eyebrow" style="letter-spacing:.08em">Surname</label>
+          <input class="input" id="last" name="last" placeholder="Doe" required />
+        </div>
+        <div>
+          <label for="email" class="eyebrow" style="letter-spacing:.08em">Email</label>
+          <input class="input" id="email" name="email" placeholder="john@domain.com" type="email" required />
+        </div>
+        <div>
+          <label for="phone" class="eyebrow" style="letter-spacing:.08em">Phone</label>
+          <input class="input" id="phone" name="phone" placeholder="(+234) 801 234 5678" type="tel" />
+        </div>
+      </div>
+      <div>
+        <label for="message" class="eyebrow" style="letter-spacing:.08em">Message</label>
+        <textarea class="input" id="message" name="message" placeholder="Tell me about your project…" required></textarea>
+      </div>
+      <div class="row" style="justify-content: space-between; margin-top:14px;">
+        <small id="formStatus" style="color:var(--muted)">I'll get back to you within 24 hours.</small>
+        <button class="btn" id="sendBtn" type="submit">Send Message</button>
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    © <span id="year"></span> By 'Great Emmanuel Agu' — Crafted with care ❤️
+  </footer>
+
+  <script type="text/javascript" src="portfolio.js"></script>
+</body>
+</html>
