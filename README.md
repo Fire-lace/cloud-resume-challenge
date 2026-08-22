@@ -29,26 +29,49 @@ The project is being built in stages.
 
 ### Current Infrastructure
 
-```text
-                    ┌─────────────────────┐
-                    │       User          │
-                    │     Web Browser     │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │     Amazon S3       │
-                    │   Static Website    │
-                    └──────────┬──────────┘
-                               │
-                               │
-                    Managed by Terraform
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   Terraform / AWS   │
-                    │      Provider       │
-                    └─────────────────────┘
+``## 🏗️ Current Architecture
+
+The project is being built incrementally, with each sprint introducing additional cloud and DevOps infrastructure.
+
+### Current Infrastructure
+
+```
+                              ┌─────────────────────┐
+                              │        User         │
+                              │     Web Browser     │
+                              └──────────┬──────────┘
+                                         │
+                                         │
+                              ┌──────────▼──────────┐
+                              │      Amazon S3       │
+                              │   Static Website     │
+                              └──────────────────────┘
+
+
+                              ┌─────────────────────┐
+                              │        User         │
+                              │     Web Browser     │
+                              └──────────┬──────────┘
+                                         │
+                                      HTTP :80
+                                         │
+                              ┌──────────▼──────────┐
+                              │    EC2 Instance      │
+                              │    Ubuntu 24.04      │
+                              │       Nginx          │
+                              └──────────┬──────────┘
+                                         │
+                              ┌──────────▼──────────┐
+                              │   Security Group     │
+                              │   HTTP / SSH Rules   │
+                              └──────────────────────┘
+
+                         ┌─────────────────────────────┐
+                         │          Terraform          │
+                         │                             │
+                         │  S3 │ EC2 │ Security Group │
+                         │       │ Outputs             │
+                         └─────────────────────────────┘
 ```
 
 > **Note:** CloudFront is planned for the architecture but is currently unavailable due to an AWS account-level restriction. The project is continuing without it.
@@ -56,7 +79,6 @@ The project is being built in stages.
 ---
 
 ## 🚀 Project Progress
-
 | Component | Status |
 |---|---|
 | Resume Website | ✅ Completed |
@@ -67,8 +89,13 @@ The project is being built in stages.
 | Terraform State Import | ✅ Completed |
 | Configuration Drift Detection | ✅ Completed |
 | Terraform Outputs | ✅ Completed |
-| EC2 Infrastructure | 🚧 In Progress |
-| Nginx Deployment | 🚧 Planned |
+| EC2 Infrastructure | ✅ Completed |
+| EC2 Security Group | ✅ Completed |
+| Configurable SSH Access | ✅ Completed |
+| EC2 User Data | ✅ Completed |
+| Nginx Deployment | ✅ Completed |
+| SSH Verification | ✅ Completed |
+| HTTP Verification | ✅ Completed |
 | VPC / Networking | 🚧 Planned |
 | GitHub Actions CI/CD | 🚧 Planned |
 | Lambda | 🚧 Planned |
@@ -76,24 +103,26 @@ The project is being built in stages.
 | DynamoDB Visitor Counter | 🚧 Planned |
 | Monitoring / Observability | 🚧 Planned |
 | CloudFront | ⏸️ Blocked by AWS Account Restriction |
-
 ---
 
 # 🛠️ Technologies
 
-## Cloud
+# 🛠️ Technologies
+
+## ☁️ Cloud
 
 - Amazon Web Services (AWS)
 - Amazon S3
 - Amazon EC2
 - AWS IAM
+- AWS Security Groups
 - AWS Lambda
 - API Gateway
 - DynamoDB
 - CloudFront
 - Route 53
 
-## DevOps & Infrastructure
+## ⚙️ Infrastructure & DevOps
 
 - Terraform
 - Git
@@ -102,6 +131,12 @@ The project is being built in stages.
 - Docker
 - Linux
 - Nginx
+
+## 💻 Development
+
+- HTML
+- CSS
+- JavaScript
 
 ---
 
@@ -139,24 +174,29 @@ cloud-resume-challenge/
 
 Terraform is used to manage the AWS infrastructure instead of relying exclusively on manual configuration through the AWS Console.
 
-The Terraform implementation currently manages:
+Terraform currently manages:
 
-- S3 bucket
+- Amazon S3
 - S3 static website configuration
 - S3 bucket policy
 - S3 public access configuration
+- Amazon EC2
+- EC2 Security Group
+- EC2 User Data
 - Resource tags
 - Terraform outputs
 
 Existing AWS resources were imported into Terraform State rather than unnecessarily recreated.
 
-This provided practical experience with:
+The project has also been used to practice:
 
-- Terraform State
+- Terraform State management
 - Resource importing
-- Configuration drift
+- Configuration drift detection
 - Infrastructure reconciliation
-- Terraform planning and execution
+- Infrastructure planning
+- Infrastructure deployment
+- Infrastructure verification
 
 ---
 
@@ -252,6 +292,7 @@ Planned examples include:
 ---
 
 # 🧠 What I'm Learning
+# 🧠 What I'm Learning
 
 This project is designed around hands-on implementation rather than simply following tutorials.
 
@@ -266,23 +307,29 @@ Key concepts demonstrated so far include:
 - Terraform State
 - Resource importing
 - Configuration drift
+- Infrastructure reconciliation
 - AWS S3 static hosting
-- IAM authentication
-- Git and GitHub workflows
+- AWS EC2
+- Security Groups
+- CIDR-based access control
+- Linux server administration
+- SSH
+- EC2 User Data
+- Cloud-init
+- Nginx
+- HTTP networking
 
 Future stages will introduce:
 
-- EC2
 - VPC networking
-- Security Groups
-- Linux server administration
-- Nginx
 - Docker
 - CI/CD
+- GitHub Actions
 - Serverless architecture
+- API Gateway
+- Lambda
 - DynamoDB
 - Monitoring and observability
-
 ---
 
 # 📚 Project Documentation
@@ -341,9 +388,21 @@ Completed:
 - Terraform outputs
 
 ### Sprint 4
+
 **Terraform EC2 + Nginx**
 
-Coming next.
+Completed:
+
+- EC2 provisioning with Terraform
+- Security Group configuration
+- HTTP and SSH access
+- Configurable SSH CIDR
+- EC2 User Data
+- Automated Nginx installation
+- Cloud-init verification
+- SSH verification
+- HTTP verification
+- Terraform infrastructure verification
 
 ---
 
@@ -360,6 +419,31 @@ Rather than building isolated tutorial projects, I'm using this repository to do
 **Active Development 🚧**
 
 The project is functional, but the architecture is intentionally evolving as new DevOps and cloud engineering concepts are implemented.
+
+---
+# 🧠 Engineering Highlights
+
+This project demonstrates practical experience with:
+
+- Managing AWS infrastructure through Terraform
+- Importing existing AWS resources into Terraform State
+- Detecting and resolving infrastructure drift
+- Provisioning EC2 instances using Infrastructure as Code
+- Configuring Security Groups and network access rules
+- Restricting SSH access using configurable CIDR variables
+- Automating Linux server configuration with EC2 User Data
+- Installing and managing Nginx through cloud-init
+- Verifying infrastructure through Terraform plan
+- Troubleshooting SSH connectivity and private key permissions
+- Testing HTTP services from both inside and outside the EC2 instance
+---
+
+# 🧭 Explore the Project
+
+- **[`terraform/`](./terraform/)** - Infrastructure as Code implementation
+- **[`terraform/README.md`](./terraform/README.md)** - Terraform architecture and implementation details
+- **[`changelog.md`](./changelog.md)** - Development and sprint history
+- **`website/`** - Resume website source files
 
 ---
 

@@ -277,3 +277,62 @@ Your infrastructure matches the configuration.
 This project represents Sprint 3 of my DevOps Bootcamp journey toward becoming a Junior DevOps / Cloud Engineer.
 
 ]
+
+[
+---
+
+# 08/22/2026
+
+# Cloud Resume Challenge – Sprint 4: Terraform EC2 + Nginx
+
+## Overview
+
+Sprint 4 expanded the Cloud Resume Challenge beyond static S3 hosting by introducing an Amazon EC2 instance provisioned and managed through Terraform.
+
+The goal of this sprint was to demonstrate practical experience with compute infrastructure, security groups, SSH access, Linux administration, automated server configuration, and web server deployment.
+
+The EC2 instance was successfully provisioned using Terraform and configured automatically with User Data to install and start Nginx.
+
+---
+
+## Sprint Objectives
+
+- Provision an EC2 instance using Terraform
+- Configure an EC2 Security Group
+- Allow HTTP traffic on port 80
+- Restrict SSH access using a configurable CIDR variable
+- Configure an EC2 key pair
+- Automate Nginx installation using User Data
+- Expose the EC2 public IP through Terraform Outputs
+- Verify the deployed web server from the internet
+- Verify SSH access to the EC2 instance
+- Verify Terraform state after deployment
+
+---
+
+## Architecture
+
+```text
+                         Internet
+                            │
+                            │ HTTP :80
+                            ▼
+                  ┌─────────────────────┐
+                  │    EC2 Instance     │
+                  │   Ubuntu 24.04 LTS  │
+                  │                     │
+                  │       Nginx         │
+                  └──────────┬──────────┘
+                             │
+                             │ Managed by
+                             ▼
+                  ┌─────────────────────┐
+                  │      Terraform      │
+                  │                     │
+                  │  AWS Provider       │
+                  │  EC2                │
+                  │  Security Group     │
+                  │  Outputs            │
+                  └─────────────────────┘
+
+]
