@@ -32,3 +32,8 @@ variable "allowed_ip" {
   description = "IP address allowed to access the EC2 instance"
   type        = string
 }
+
+variable "vpc_cidr" {
+  description = "CIDR block for the Cloud Resume Challenge VPC"
+  type        = string
+}
