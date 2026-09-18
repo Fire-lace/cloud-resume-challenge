@@ -136,7 +136,8 @@ resource "aws_instance" "resume_instance" {
   ami                    = var.ami_id
   instance_type          = var.instance_type
   key_name               = var.key_name
-  vpc_security_group_ids = [aws_security_group.resume_sg.id]
+  subnet_id              = aws_subnet.resume_subnet.id
+  vpc_security_group_ids = [aws_security_group.custom_vpc_sg.id]
   user_data              = <<-EOF
               #!/bin/bash
               apt update -y
@@ -149,32 +150,5 @@ resource "aws_instance" "resume_instance" {
     Name    = var.instance_name
     Project = "Cloud Resume Challenge"
     Managed = "Terraform"
-  }
-}
-
-resource "aws_security_group" "resume_sg" {
-  name        = "resume_sg"
-  description = "Security group for Cloud Resume Challenge"
-
-
-  ingress {
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = [var.allowed_ip]
-  }
-
-  egress {
-    from_port   = 0
-    to_port     = 0
-    protocol    = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
   }
 }
