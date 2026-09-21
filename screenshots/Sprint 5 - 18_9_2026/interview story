@@ -1,0 +1,1 @@
+"I migrated an EC2 workload from the default VPC into a custom Terraform-managed VPC, created the subnet, routing, Internet Gateway and security controls, then validated SSH and Nginx connectivity and removed the obsolete infrastructure."

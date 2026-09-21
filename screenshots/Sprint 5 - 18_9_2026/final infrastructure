@@ -1,0 +1,27 @@
+Region: us-east-1
+
+VPC:
+vpc-0366a9ac8008ab7f8
+CIDR: 10.0.0.0/16
+
+Subnet:
+subnet-0e1e2c1665640fffb
+CIDR: 10.0.0.0/24
+AZ: us-east-1a
+
+Internet Gateway:
+igw-0265e2a8a80a905a4
+
+Route Table:
+rtb-0dd6762b7d0022369
+
+Security Group:
+sg-07dc18ff85263bcce
+
+EC2:
+i-0a71b150642563261
+Private IP: 10.0.0.87
+Public IP: 100.62.22.106
+
+Nginx:
+Active and running

@@ -1,0 +1,18 @@
+#Find available AZs
+aws ec2 describe-availability-zones --filters Name=zone-type,Values=availability-zone --region us-east-1 --query AvailabilityZones[].ZoneName
+
+#Find available instance types
+aws ec2 describe-instance-type-offerings --location-type region --filters "Name=location,Values=us-east-1" --query "InstanceTypeOfferings[].InstanceType" --output table
+
+##Check your public IP
+(Invoke-RestMethod -Uri "https://checkip.amazonaws.com").Trim()
+
+#Verify EC2 networking
+aws ec2 describe-instances --instance-ids i-0a71b150642563261 --query "Reservations[0].Instances[0].[InstanceId,VpcId,SubnetId,PrivateIpAddress,PublicIpAddress,SecurityGroups[0].GroupId,State.Name]" --output table
+
+#Terraform commands:
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+terraform state list
