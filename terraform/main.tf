@@ -27,6 +27,14 @@ resource "aws_security_group" "custom_vpc_sg" {
   }
 
   ingress {
+  description = "Temporary Docker deployment test"
+  from_port   = 8080
+  to_port     = 8080
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}
+
+  ingress {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
